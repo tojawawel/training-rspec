@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title IRock
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-default
+      = link_to 'New Achievement', new_achievement_path, class: 'nav-link'
+      -if flash[:notice]
+        .alert.alert-info= flash[:notice]
+      -elsif flash[:danger]
+        .alert.alert-danger= flash[:danger]
+      -flash.clear
+    = yield
