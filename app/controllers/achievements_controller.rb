@@ -7,8 +7,16 @@ class AchievementsController < ApplicationController
     @achievement = Achievement.new(achievement_params)
     if @achievement.save
       redirect_to root_url, notice: 'Achievement has been created!'
+    else
+      render 'new'
+    end
   end
-end
+
+  def show
+    @achievement = Achievement.find(params[:id])
+    @description = Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@achievement.description)
+  end
+
 
 private
 
