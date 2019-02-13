@@ -21,11 +21,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
+  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
 end
 
-group :development, :test do
+group :test do
   gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
