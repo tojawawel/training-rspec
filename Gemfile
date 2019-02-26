@@ -16,6 +16,7 @@ gem 'haml'
 gem 'bootstrap'
 gem 'simple_form'
 gem 'redcarpet'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
